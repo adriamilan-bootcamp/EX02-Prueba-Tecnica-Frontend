@@ -1,0 +1,52 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <div class="container-fluid px-5">
+    <a class="navbar-brand" routerLink="home">The Movie DB</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#rm-nav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="rm-nav">
+      <ul class="navbar-nav ms-auto mx-5">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="movies">Movies</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="about">About</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="text" placeholder="Search">
+        <button class="btn btn-success btn-green" type="button">Search</button>
+      </form>
+      <button (click)="logout()" *ngIf="isLoggedIn" class="ml-10 btn btn-dark border border-light">
+        Logout
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- *ngIf="isLoggedIn; else loggedView" -->
+<router-outlet></router-outlet>
+
+<!-- <ng-template #loggedView>
+  <div class="container mt-5 m-0-auto w-50">
+    <h1>Login</h1>
+    <div class="container mt-2 p-4 border border-dark rounded">
+      <form [formGroup]="loginForm">
+        <h4 class="mt-2">Username</h4>
+        <div class="input-group">
+          <input type="text" formControlName="username" class="form-control">
+        </div>
+        <h4 class="mt-2">Password</h4>
+        <div class="input-group">
+          <input type="password" formControlName="password" class="form-control">
+        </div>
+        <button (click)="onSubmit()" class="btn btn-dark mt-3">
+          Login
+        </button>
+      </form>
+    </div>
+  </div>
+</ng-template> -->
