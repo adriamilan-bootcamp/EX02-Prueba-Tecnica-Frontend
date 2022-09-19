@@ -11,7 +11,8 @@ import { MoviesListComponent } from './components/movies-list/movies-list.compon
 import { MoviesDetailsComponent } from './components/movies-details/movies-details.component';
 import { HomeComponent } from './components/home/home.component';
 import { SeriesDetailsComponent } from './components/series-details/series-details.component';
-import { SeriesListComponent } from './components/series-list/series-list.component'
+import { SeriesListComponent } from './components/series-list/series-list.component';
+import { AboutComponent } from './components/about/about.component'
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { SeriesListComponent } from './components/series-list/series-list.compon
     MoviesDetailsComponent,
     HomeComponent,
     SeriesDetailsComponent,
-    SeriesListComponent
+    SeriesListComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
