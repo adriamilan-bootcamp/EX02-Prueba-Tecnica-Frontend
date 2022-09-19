@@ -1,0 +1,40 @@
+<div class="container mt-5">
+    <div *ngIf="series!=null; else spinner" class="row">
+        <nav aria-label="Pagination" class="m-0-auto">
+            <ul class="pagination">
+              <li class="page-item"><button class="page-link" (click)="previousPage()">Previous</button></li>
+              <li class="page-item"><button class="page-link" (click)="setPage(1)">1</button></li>
+              <li class="page-item"><button class="page-link" (click)="setPage(2)">2</button></li>
+              <li class="page-item"><button class="page-link" (click)="setPage(3)">3</button></li>
+              <li class="page-item"><button class="page-link" (click)="nextPage()">Next</button></li>
+            </ul>
+          </nav>
+        <div *ngFor="let serie of series.results" class="col-md-3">
+            <div class="card mt-4 mx-auto" style="width: 18rem;">
+                <img class="card-img-top" src="https://image.tmdb.org/t/p/w220_and_h330_face{{serie.poster_path}}" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{serie.name}}</h5>
+                    <div class="d-grid gap-2">
+                        <a type="button" class="btn btn-warning" routerLink="/serie/{{serie.id}}">
+                            See Details
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav aria-label="Pagination" class="m-0-auto mt-3 mb-3">
+            <ul class="pagination">
+              <li class="page-item"><button class="page-link" (click)="previousPage()">Previous</button></li>
+              <li class="page-item"><button class="page-link" (click)="setPage(1)">1</button></li>
+              <li class="page-item"><button class="page-link" (click)="setPage(2)">2</button></li>
+              <li class="page-item"><button class="page-link" (click)="setPage(3)">3</button></li>
+              <li class="page-item"><button class="page-link" (click)="nextPage()">Next</button></li>
+            </ul>
+          </nav>
+    </div>
+    <ng-template #spinner>
+        <div class="spinner-border w-custom h-custom mx-auto" role="status">
+            <span class="sr-only"></span>
+        </div>
+    </ng-template>
+</div>

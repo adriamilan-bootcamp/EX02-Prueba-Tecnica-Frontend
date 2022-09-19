@@ -9,14 +9,18 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthInterceptor } from '../app/_helpers/auth-interceptor';
 import { MoviesListComponent } from './components/movies-list/movies-list.component';
 import { MoviesDetailsComponent } from './components/movies-details/movies-details.component';
-import { HomeComponent } from './components/home/home.component'
+import { HomeComponent } from './components/home/home.component';
+import { SeriesDetailsComponent } from './components/series-details/series-details.component';
+import { SeriesListComponent } from './components/series-list/series-list.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     MoviesListComponent,
     MoviesDetailsComponent,
-    HomeComponent
+    HomeComponent,
+    SeriesDetailsComponent,
+    SeriesListComponent
   ],
   imports: [
     BrowserModule,

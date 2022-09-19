@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { Movies } from '../models/movies.model';
+import { Series } from '../models/series.model'
 import { Observable } from 'rxjs';
 
 const URL_API = "https://api.themoviedb.org/3/";
@@ -20,6 +21,14 @@ export class MoviesService {
 
   getMovie(id: any): Observable<any> {
     return this.http.get<Movies>(URL_API + "movie/" + id + "?api_key=" + API_KEY + "&language=es-ES")
+  }
+
+  getPopularSeries(page:string): Observable<Series[]> {
+    return this.http.get<Movies[]>(URL_API + "tv/popular?api_key=" + API_KEY + "&language=es-ES&page=" + page)
+  }
+
+  getSerie(id: any): Observable<any> {
+    return this.http.get<Series>(URL_API + "tv/" + id + "?api_key=" + API_KEY + "&language=es-ES")
   }
 
 }
